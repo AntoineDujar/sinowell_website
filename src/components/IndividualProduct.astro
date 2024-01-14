@@ -1,10 +1,11 @@
 ---
 const { products } = Astro.props
+import CustomImageImport from "./CustomImageImport.astro";
 ---
 <ul class="products">
     {products.map((product) => (
         <li>
-            <img src={`/img/${product}`} alt={`${product} photo`} height="200"/>
+            <CustomImageImport imagePath={'/src/assets/'+product} altText={product+' photo'}/>
         </li>
     ))}
 </ul>

@@ -1,5 +1,7 @@
 ---
 import { Image } from 'astro:assets';
+import CustomImageImport from "./CustomImageImport.astro";
+
 
 const products = [
     { name: 'Gift bags', img: 'bag_kraft_1.jpg', url: '/products/giftBags' },
@@ -8,6 +10,7 @@ const products = [
     { name: 'Tin boxes', img: 'soap_tin3.jpg', url: '/products/tinBoxes' },
 ]
 
+// <img src={`/img/${product.img}`} alt={`${product.name} image`} height="200"/>
 ---
 <h2>Products</h2>
 <ul class="products">
@@ -16,7 +19,10 @@ const products = [
             <li>
                 <a href={product.url}>
                     <h3>{product.name}</h3>
-                    <img src={`/img/${product.img}`} alt={`${product.name} image`} height="200"/>
+                    <CustomImageImport 
+                        imagePath={'/src/assets/'+product.img} 
+                        altText={product.name+' photo'} 
+                    />
                 </a>
             </li>
         ))
