@@ -1,0 +1,21 @@
+---
+const { products } = Astro.props
+---
+<ul class="products">
+    {products.map((product) => (
+        <li>
+            <img src={`/img/${product}`} alt={`${product} photo`} height="200"/>
+        </li>
+    ))}
+</ul>
+
+<style>
+    .products {
+        justify-content: flex-start;
+    }
+
+    .products li {
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+    }
+</style>

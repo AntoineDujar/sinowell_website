@@ -1,1 +1,123 @@
 @import url('./reset.css');
+@import url("./animations.css");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+
+:root {
+    font-family: 'Raleway', Verdana, sans-serif; 
+    --background: #FFF;
+    --on-background: #000;
+    --nav-link: #4A4A4A;
+    --nav-link-hover: #1E2EB9;
+    display: flex;
+    justify-content: center;
+    min-width: 40rem;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 2rem 3rem;
+    background-color: var(--background);
+    min-height: 100vh;
+    max-width: 70rem;
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    font-size: 4.5rem;
+    font-weight: 500;
+    font-family: Georgia, serif; 
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h2, h3, p {
+    margin: 1rem 0rem;
+}
+
+h3 {
+    margin: 1rem 0rem;
+}
+
+p {
+font-size: 1.25rem;
+font-weight: 200;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.products li img{
+    transition: opacity 0.2s ease-in-out;
+}
+
+.products li:hover a{
+    color: var(--nav-link-hover);
+}
+
+.products li:hover img{
+    opacity: 0.65;
+}
+
+.products img {
+    height: 15rem;
+    width: auto;
+}
+
+.products a,
+.products a:visited,
+.products a:active {
+    text-decoration: none;
+    color: var(--nav-link);
+    font-size: 3rem;
+}
+
+.products a:hover {
+    color: var(--nav-link-hover); 
+}
+
+nav {
+    justify-self: flex-start;
+    margin: 0rem 0rem;
+    display:flex;
+    flex-direction: column;
+}
+
+nav a,
+nav a:visited,
+nav a:active {
+    font-size: 3rem;
+    text-decoration: none;
+    color: var(--nav-link);
+    font-family: 'Raleway', sans-serif;
+}
+
+nav a:hover {
+    color: var(--nav-link-hover);
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+}
+
+
+nav a,
+nav a:visited,
+nav a:active {
+    font-size: 2rem;
+    text-align: end;
+}

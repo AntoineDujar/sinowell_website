@@ -1,0 +1,24 @@
+---
+import { Image } from 'astro:assets';
+
+const products = [
+    { name: 'Gift bags', img: 'bag_kraft_1.jpg', url: '/products/giftBags' },
+    { name: 'Gift boxes', img: 'macaron_box1.jpg', url: '/products/giftBoxes' },
+    { name: 'Folding gift boxes', img: 'fold_box4.jpg', url: '/products/foldingGiftBoxes' },
+    { name: 'Tin boxes', img: 'soap_tin3.jpg', url: '/products/tinBoxes' },
+]
+
+---
+<h2>Products</h2>
+<ul class="products">
+    {
+        products.map((product) => (
+            <li>
+                <a href={product.url}>
+                    <h3>{product.name}</h3>
+                    <img src={`/img/${product.img}`} alt={`${product.name} image`} height="200"/>
+                </a>
+            </li>
+        ))
+    }
+</ul>

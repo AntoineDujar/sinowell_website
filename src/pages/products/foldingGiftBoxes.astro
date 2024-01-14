@@ -1,0 +1,16 @@
+---
+import ProductLayout from "../../layouts/ProductLayout.astro";
+import IndividualProduct from "../../components/IndividualProduct.astro";
+
+const pageTitle = "Folding gift boxes"
+
+const images = [
+    'fold_box1.jpg',
+    'fold_box2.jpg',
+    'fold_box3.jpg',
+    'fold_box4.jpg'
+]
+---
+<ProductLayout pageTitle={pageTitle}>
+    <IndividualProduct products={images} />
+</ProductLayout>
