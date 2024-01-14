@@ -1,16 +1,49 @@
 ---
+import "../styles/global.css";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Products from '../components/Projects.astro';
 
+const pageTitle = "Sinowell Products";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+	<h1>Sinowell Products Limited</h1>
+	
+	<h2>Products</h2>
+	<Products />
+
+
+	<h2>About us</h2>
+	<p>
+		Based in Hong Kong, Sinowell Products Ltd has been offering its sourcing, quality control, creation, and project management services for over thirty years.
+	</p>
+	<p>
+		Thanks to our experience, we have gained the trust of our clients and, as a result, developed numerous innovative projects.
+	</p>
+	<p>
+		Our careful monitoring of production and strict adherence to specifications, facilitated by our offices in China, play a crucial role in every project.
+	</p>
+	<p>
+		Textile products, corporate gifts, promotional items, cosmetic kits, luxury gift boxes, classic metal boxes, and metal boxes with special shapes (sphere, animals, Christmas tree, car shapes, etc.) are sought after and sourced, created at the best prices while respecting quality and current standards.
+	</p>
+	<p>
+		Closely supervised by our own teams, our factories undergo thorough audits and continuous monitoring throughout the production process, ensuring meticulous tracking before, during, and after manufacturing.
+	</p>
+	<p>
+		Feel free to send us your research or inquiries; our bilingual team in Hong Kong is excited to impress you.
+	</p>
+	<h2>Contact us</h2>
+	<p>
+		Unit 305, 3/FL, Block B, Sea View Estate, 2-8 Watson Road, North Point, Hong Kong
+	</p>
+	<p>
+		Email: fab@netvigator.com | thomsinowell@netvigator.com
+	</p>
+	<p>
+		Office tel: (852) 2881 7047 | Office fax: (852) 2882 5295
+	</p>
+	<p>
+		Mobile: HK (852) 9030 5728
+		test
+	</p>
+</BaseLayout>
