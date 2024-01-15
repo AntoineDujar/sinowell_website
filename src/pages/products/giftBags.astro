@@ -4,11 +4,8 @@ import IndividualProduct from "../../components/IndividualProduct.astro";
 
 const pageTitle = "Gift bags"
 
-const images = [
-    'bag_kraft_1.jpg',
-    'bag_kraft_2.jpg',
-]
+const folder = "giftBags"
 ---
 <ProductLayout pageTitle={pageTitle}>
-    <IndividualProduct products={images} />
+    <IndividualProduct folder={folder} />
 </ProductLayout>

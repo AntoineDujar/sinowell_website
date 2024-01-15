@@ -1,0 +1,20 @@
+---
+import type { GetStaticPaths } from "astro";
+import ProductLayout from "../../layouts/ProductLayout.astro";
+import IndividualProduct from "../../components/IndividualProduct.astro";
+
+export async function getStaticPaths() {
+    return [
+        { params: { pageTitle: "Gift bags", folder: "giftBags"}},
+        { params: { pageTitle: "Gift boxes", folder: "giftBoxes"}},
+        { params: { pageTitle: "Folding gift bags", folder: "foldingGiftBags"}},
+        { params: { pageTitle: "Tin boxes", folder: "tinBoxes"}}
+    ];
+}
+
+const { pageTitle, folder } = Astro.params;
+---
+
+<ProductLayout pageTitle={pageTitle}>
+    <IndividualProduct folder={folder} />
+</ProductLayout>

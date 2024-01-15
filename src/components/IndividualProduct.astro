@@ -1,13 +1,22 @@
 ---
-const { products } = Astro.props
+const { folder } = Astro.props
+import { imageConfig } from "astro:assets";
 import CustomImageImport from "./CustomImageImport.astro";
+
+console.log('folder: ', folder)
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
+const filteredImages = Object.fromEntries(
+ Object.entries(images).filter(([key]) => key.includes(folder))
+);
+const imageTitles = Object.keys(filteredImages)
+
 ---
 <ul class="products">
-    {products.map((product) => (
-        <li>
-            <CustomImageImport imagePath={'/src/assets/'+product} altText={product+' photo'}/>
-        </li>
-    ))}
+{imageTitles.map((product) => (
+    <li>
+        <CustomImageImport imagePath={product} altText={product+' photo'}/>
+    </li>
+))}
 </ul>
 
 <style>

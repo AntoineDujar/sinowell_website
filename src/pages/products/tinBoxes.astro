@@ -4,14 +4,8 @@ import IndividualProduct from "../../components/IndividualProduct.astro";
 
 const pageTitle = "Tin boxes"
 
-const images = [
-    'soap_tin1.jpg',
-    'soap_tin2.jpg',
-    'soap_tin3.jpg',
-    'egg_tin1.jpg',
-    'egg_tin2.jpg'
-]
+const folder = "tinBoxes"
 ---
 <ProductLayout pageTitle={pageTitle}>
-    <IndividualProduct products={images} />
+    <IndividualProduct folder={folder} />
 </ProductLayout>
