@@ -5,16 +5,17 @@ import ProductLayout from "../../layouts/ProductLayout.astro";
 
 export async function getStaticPaths() {
   return [
-    { params: { tag: "giftBags" } },
-    { params: { tag: "giftBoxes" } },
-    { params: { tag: "foldingGiftBoxes" } },
-    { params: { tag: "tinBoxes" } },
+    { params: { tag: "giftBags"}, props: {pageTitle: "Folding gift bags"} },
+    { params: { tag: "giftBoxes"}, props: {pageTitle: "Gift boxes" } },
+    { params: { tag: "foldingGiftBoxes"}, props: {pageTitle: "Folding gift boxes" } },
+    { params: { tag: "tinBoxes"}, props: {pageTitle: "Tin boxes" } },
   ];
 }
 
 const { tag } = Astro.params;
+const { pageTitle } = Astro.props;
 ---
-<ProductLayout pageTitle={tag}>
+<ProductLayout pageTitle={pageTitle}>
     <IndividualProduct folder={tag} />
 
 </ProductLayout>
