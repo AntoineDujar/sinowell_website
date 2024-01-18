@@ -3,6 +3,7 @@ import { getImage } from "astro:assets";
 const { folder } = Astro.props;
 import { imageConfig } from "astro:assets";
 import CustomImageImport from "./CustomImageImport.astro";
+import MagicImage from "./MagicImage";
 
 console.log("folder: ", folder);
 const images = import.meta.glob<{ default: ImageMetadata }>(
