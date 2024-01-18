@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets';
+import CustomImageImport from "../CustomImageImport.astro";
+
+
+const products = [
+    { name: 'Sacs cadeaux', img: 'giftBags/provence_bag1.jpg', url: '/fr/produits/giftBags' },
+    { name: 'Boîtes cadeaux', img: 'giftBoxes/macaron_box7.jpg', url: '/fr/produits/giftBoxes' },
+    { name: 'Boîtes cadeaux pliantes', img: 'foldingGiftBoxes/provence0.jpg', url: '/fr/produits/foldingGiftBoxes' },
+    { name: 'Boîtes cadeaux cylindriques', img: 'cylindricalGiftBoxes/vareity5.jpg', url: '/fr/produits/cylindricalGiftBoxes' },
+    { name: 'Boîtes en métal', img: 'tinBoxes/soap_tin3.jpg', url: '/fr/produits/tinBoxes' },
+    { name: "Calendriers de l'Avent", img: 'adventCalendars/dark_green1.jpg', url: '/fr/produits/adventCalendars' },
+];
+
+// <img src={`/img/${product.img}`} alt={`${product.name} image`} height="200"/>
+---
+<h2>Produits</h2>
+<ul class="products">
+    {
+        products.map((product) => (
+            <li>
+                <a href={product.url}>
+                    <h3>{product.name}</h3>
+                    <CustomImageImport 
+                        imagePath={'/src/assets/'+product.img} 
+                        altText={product.name+' photo'} 
+                    />
+                </a>
+            </li>
+        ))
+    }
+</ul>

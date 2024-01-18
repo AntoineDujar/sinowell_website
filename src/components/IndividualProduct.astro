@@ -3,8 +3,6 @@ import { getImage } from "astro:assets";
 const { folder } = Astro.props;
 import { imageConfig } from "astro:assets";
 import CustomImageImport from "./CustomImageImport.astro";
-import MagicImage from "./MagicImage";
-
 console.log("folder: ", folder);
 const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/**/*.{jpeg,jpg,png,gif}"
@@ -13,6 +11,7 @@ const filteredImages = Object.fromEntries(
   Object.entries(images).filter(([key]) => key.includes(folder))
 );
 const imageTitles = Object.keys(filteredImages);
+
 ---
 
 <ul class="products">

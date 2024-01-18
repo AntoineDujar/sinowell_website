@@ -1,0 +1,21 @@
+---
+import "../../styles/global.css";
+import BaseLayout from '../../layouts/fr/BaseLayout.astro';
+import Products from '../../components/fr/Products.astro';
+import AboutUs from '../../components/fr/AboutUs.astro';
+import ContactUs from '../../components/fr/ContactUs.astro';
+import Title from '../../components/fr/Title.astro';
+
+const pageTitle = "Sinowell Products";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+
+	<Title />
+	<Products />
+	<AboutUs />
+	<ContactUs />
+
+</BaseLayout>
+
+
