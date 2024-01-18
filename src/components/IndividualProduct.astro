@@ -15,7 +15,7 @@ const imageTitles = Object.keys(filteredImages)
 <ul class="products">
 {imageTitles.map((product) => (
     <li>
-        <a href={product.slice(4)}>   
+        <a href={product.slice(4)} target="_blank">   
             <CustomImageImport imagePath={product} altText={product+' photo'}/>
         </a>
     </li>
