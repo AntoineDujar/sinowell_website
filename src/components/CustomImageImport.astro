@@ -1,37 +1,15 @@
 ---
 import { Image } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
+import { getImage } from "astro:assets";
 
 const { imagePath, altText } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}')
 if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "src/assets/**/*.{jpeg,jpg,png,gif}"`);
 
 
-function handleClick(event) {
-     // Prevent the default action
-     event.preventDefault();
-   
-     // Open a new tab with the image URL
-     window.open(this.querySelector('img').src, "_blank");}
+
 ---
+<Image src={images[imagePath]()} alt={altText} height={600}/>
 
-<div>
-    <Image id="clickableImage" src={images[imagePath]()} alt={altText} height={600}/>
-</div>
 
-<script>
-    // Get the element by its id
-    var element = document.getElementById("clickableImage");
-
-    // Check if the element is an HTMLImageElement
-    if (element instanceof HTMLImageElement) {
-        // Now you can access the src property
-        var imageUrl = element.src;
-
-        // Attach a click event listener to the image
-        element.addEventListener("click", function() {
-            // Open a new tab with the image URL
-            window.open(imageUrl, "_blank");
-        });
-    }
-</script>
