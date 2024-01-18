@@ -1,34 +1,38 @@
 ---
 import { getImage } from "astro:assets";
-const { folder } = Astro.props
+const { folder } = Astro.props;
 import { imageConfig } from "astro:assets";
 import CustomImageImport from "./CustomImageImport.astro";
 
-console.log('folder: ', folder)
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}');
-const filteredImages = Object.fromEntries(
- Object.entries(images).filter(([key]) => key.includes(folder))
+console.log("folder: ", folder);
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/**/*.{jpeg,jpg,png,gif}"
 );
-const imageTitles = Object.keys(filteredImages)
-
+const filteredImages = Object.fromEntries(
+  Object.entries(images).filter(([key]) => key.includes(folder))
+);
+const imageTitles = Object.keys(filteredImages);
 ---
+
 <ul class="products">
-{imageTitles.map((product) => (
-    <li>
-        <a href={product.slice(4, -4)+".webp"} target="_blank">   
-            <CustomImageImport imagePath={product} altText={product+' photo'}/>
+  {
+    imageTitles.map((product) => (
+      <li>
+        <a href={product.slice(4, -4) + ".jpg"} target="_blank">
+          <CustomImageImport imagePath={product} altText={product + " photo"} />
         </a>
-    </li>
-))}
+      </li>
+    ))
+  }
 </ul>
 
 <style>
-    .products {
-        justify-content: flex-start;
-    }
+  .products {
+    justify-content: flex-start;
+  }
 
-    .products li {
-        margin-right: 2rem;
-        margin-bottom: 2rem;
-    }
+  .products li {
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+  }
 </style>
