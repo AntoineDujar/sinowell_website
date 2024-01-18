@@ -15,4 +15,23 @@ function handleClick(event) {
      window.open(this.querySelector('img').src, "_blank");}
 ---
 
-<Image src={images[imagePath]()} alt={altText} height={600}/>
+<div>
+    <Image id="clickableImage" src={images[imagePath]()} alt={altText} height={600}/>
+</div>
+
+<script>
+    // Get the element by its id
+    var element = document.getElementById("clickableImage");
+
+    // Check if the element is an HTMLImageElement
+    if (element instanceof HTMLImageElement) {
+        // Now you can access the src property
+        var imageUrl = element.src;
+
+        // Attach a click event listener to the image
+        element.addEventListener("click", function() {
+            // Open a new tab with the image URL
+            window.open(imageUrl, "_blank");
+        });
+    }
+</script>
