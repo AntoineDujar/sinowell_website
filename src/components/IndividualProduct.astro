@@ -11,14 +11,13 @@ const filteredImages = Object.fromEntries(
   Object.entries(images).filter(([key]) => key.includes(folder))
 );
 const imageTitles = Object.keys(filteredImages);
-
 ---
 
 <ul class="products">
   {
     imageTitles.map((product) => (
       <li>
-        <a href={product.slice(4, -4) + ".jpg"} target="_blank">
+        <a href={product.slice(4, -4) + ".webp"} target="_blank">
           <CustomImageImport imagePath={product} altText={product + " photo"} />
         </a>
       </li>
