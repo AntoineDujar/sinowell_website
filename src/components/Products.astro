@@ -1,32 +1,56 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 import CustomImageImport from "./CustomImageImport.astro";
 
-
 const products = [
-    { name: 'Gift bags', img: 'giftBags/provence_bag1.jpg', url: '/products/giftBags' },
-    { name: 'Gift boxes', img: 'giftBoxes/macaron_box7.jpg', url: '/products/giftBoxes' },
-    { name: 'Folding gift boxes', img: 'foldingGiftBoxes/provence0.jpg', url: '/products/foldingGiftBoxes' },
-    { name: 'Cylindrical gift boxes', img: 'cylindricalGiftBoxes/vareity5.jpg', url: '/products/cylindricalGiftBoxes' },
-    { name: 'Tin boxes', img: 'tinBoxes/soap_tin3.jpg', url: '/products/tinBoxes' },
-    { name: 'Advent calendars', img: 'adventCalendars/dark_green1.jpg', url: '/products/adventCalendars' },
-]
+  {
+    name: "Gift bags",
+    img: "giftBags/provence_bag1.jpg",
+    url: "/products/giftBags",
+  },
+  {
+    name: "Gift boxes",
+    img: "giftBoxes/macaron_box7.jpg",
+    url: "/products/giftBoxes",
+  },
+  {
+    name: "Folding gift boxes",
+    img: "foldingGiftBoxes/provence0.jpg",
+    url: "/products/foldingGiftBoxes",
+  },
+  {
+    name: "Cylindrical gift boxes",
+    img: "cylindricalGiftBoxes/vareity3.jpg",
+    url: "/products/cylindricalGiftBoxes",
+  },
+  {
+    name: "Tin boxes",
+    img: "tinBoxes/soap_tin3.jpg",
+    url: "/products/tinBoxes",
+  },
+  {
+    name: "Advent calendars",
+    img: "adventCalendars/dark_green1.jpg",
+    url: "/products/adventCalendars",
+  },
+];
 
 // <img src={`/img/${product.img}`} alt={`${product.name} image`} height="200"/>
 ---
+
 <h2>Products</h2>
 <ul class="products">
-    {
-        products.map((product) => (
-            <li>
-                <a href={product.url}>
-                    <h3>{product.name}</h3>
-                    <CustomImageImport 
-                        imagePath={'/src/assets/'+product.img} 
-                        altText={product.name+' photo'} 
-                    />
-                </a>
-            </li>
-        ))
-    }
+  {
+    products.map((product) => (
+      <li>
+        <a href={product.url}>
+          <h3>{product.name}</h3>
+          <CustomImageImport
+            imagePath={"/src/assets/" + product.img}
+            altText={product.name + " photo"}
+          />
+        </a>
+      </li>
+    ))
+  }
 </ul>
