@@ -1,22 +1,42 @@
 ---
-import BaseLayout from '../../../layouts/fr/BaseLayout.astro';
+import BaseLayout from "../../../layouts/fr/BaseLayout.astro";
 import IndividualProduct from "../../../components/IndividualProduct.astro";
 import ProductLayout from "../../../layouts/fr/ProductLayout.astro";
 
 export async function getStaticPaths() {
   return [
-    { params: { produit: "giftBags"}, props: {pageTitle: "Sacs cadeaux"} },
-    { params: { produit: "giftBoxes"}, props: {pageTitle: "Boîtes cadeaux" } },
-    { params: { produit: "foldingGiftBoxes"}, props: {pageTitle: "Boîtes cadeaux pliantes" } },
-    { params: { produit: "cylindricalGiftBoxes"}, props: {pageTitle: "Boîtes cadeaux cylindriques" } },
-    { params: { produit: "tinBoxes"}, props: {pageTitle: "Boîtes en métal" } },
-    { params: { produit: "adventCalendars"}, props: {pageTitle: "Calendriers de l'Avent" } },
+    { params: { produit: "giftBags" }, props: { pageTitle: "Sacs cadeaux" } },
+    {
+      params: { produit: "giftBoxes" },
+      props: { pageTitle: "Boîtes cadeaux" },
+    },
+    {
+      params: { produit: "foldingGiftBoxes" },
+      props: { pageTitle: "Boîtes cadeaux pliantes" },
+    },
+    {
+      params: { produit: "cylindricalGiftBoxes" },
+      props: { pageTitle: "Boîtes cadeaux cylindriques" },
+    },
+    {
+      params: { produit: "tinBoxes" },
+      props: { pageTitle: "Boîtes en métal" },
+    },
+    {
+      params: { produit: "adventCalendars" },
+      props: { pageTitle: "Calendriers de l'Avent" },
+    },
+    {
+      params: { produit: "glassBottles" },
+      props: { pageTitle: "Bouteilles en verre" },
+    },
   ];
 }
 
 const { produit } = Astro.params;
 const { pageTitle } = Astro.props;
 ---
+
 <ProductLayout pageTitle={pageTitle}>
-    <IndividualProduct folder={produit} />
+  <IndividualProduct folder={produit} />
 </ProductLayout>
