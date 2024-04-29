@@ -11,19 +11,29 @@ const filteredImages = Object.fromEntries(
   Object.entries(images).filter(([key]) => key.includes(folder))
 );
 const imageTitles = Object.keys(filteredImages);
+var showItem = false;
+if (folder == "glassBottles") {
+  showItem = true;
+}
 ---
 
-<ul class="products">
-  {
-    imageTitles.map((product) => (
-      <li>
-        <a href={product.slice(4, -4) + ".jpg"} target="_blank">
-          <CustomImageImport imagePath={product} altText={product + " photo"} />
-        </a>
-      </li>
-    ))
-  }
-</ul>
+<div data-folder={folder}>
+  <ul class="products">
+    {
+      imageTitles.map((product) => (
+        <li>
+          <a href={product.slice(4, -4) + ".jpg"} target="_blank">
+            <CustomImageImport
+              imagePath={product}
+              altText={product + " photo"}
+            />
+          </a>
+          {showItem && <p id="imageTitle">{product.slice(25, -4)}</p>}
+        </li>
+      ))
+    }
+  </ul>
+</div>
 
 <style>
   .products {
